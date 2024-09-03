@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://da6nsssqnm0vs"]
+
+[ext_resource type="PackedScene" uid="uid://bynoet03n2wd0" path="res://Scenes/hud.tscn" id="1_7k20r"]
+[ext_resource type="PackedScene" uid="uid://dt5viwwypivy3" path="res://Scenes/tile_map.tscn" id="2_buiu2"]
+[ext_resource type="PackedScene" uid="uid://d1martbwv6f0j" path="res://Scenes/door_office.tscn" id="3_jp5x5"]
+[ext_resource type="PackedScene" uid="uid://b1op7qkb8ijuk" path="res://Scenes/player.tscn" id="4_282mh"]
+
+[node name="Level" type="Node2D"]
+
+[node name="HUD_Canvas" type="CanvasLayer" parent="."]
+
+[node name="HUD" parent="HUD_Canvas" instance=ExtResource("1_7k20r")]
+
+[node name="TileMap" parent="." instance=ExtResource("2_buiu2")]
+
+[node name="door" parent="." instance=ExtResource("3_jp5x5")]
+position = Vector2(816, 352)
+scale = Vector2(0.5, 0.5)
+
+[node name="Player" parent="." instance=ExtResource("4_282mh")]
+position = Vector2(288, 344)
+collision_layer = 9
+
+[node name="Marker2D" type="Marker2D" parent="Player"]
+position = Vector2(0, -40)
+
+[node name="Camera2D" type="Camera2D" parent="Player/Marker2D"]
+offset = Vector2(-24.97, 0)
+zoom = Vector2(2.615, 2.615)
+limit_left = -10000002
+limit_smoothed = true
+drag_horizontal_enabled = true
+drag_vertical_enabled = true

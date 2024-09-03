@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://cw0sh2hdcxsyl"]
+
+[ext_resource type="Texture2D" uid="uid://wsjqrwiw76mx" path="res://art/tilemap_packed.png" id="2_sifdu"]
+
+[node name="door" type="Node2D"]
+scale = Vector2(0.548, 0.5)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+scale = Vector2(2.02381, 2.19697)
+texture = ExtResource("2_sifdu")
+region_enabled = true
+region_rect = Rect2(252, 492, 21, 33)

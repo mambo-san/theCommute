@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://ked6dfur5b5m"]
+
+[ext_resource type="Script" path="res://Scripts/MoneyPopup.gd" id="1_88uaq"]
+
+[node name="moneyPopup" type="RichTextLabel"]
+offset_left = 960.0
+offset_top = 584.0
+offset_right = 1168.0
+offset_bottom = 656.0
+text = "++$10.50"
+script = ExtResource("1_88uaq")

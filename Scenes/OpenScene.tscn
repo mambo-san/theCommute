@@ -1,0 +1,86 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2alypqmldvm8"]
+
+[ext_resource type="Script" path="res://Scripts/OpenScene.gd" id="1_1kbtk"]
+[ext_resource type="Texture2D" uid="uid://wsjqrwiw76mx" path="res://art/tilemap_packed.png" id="2_drx86"]
+
+[node name="OpenScene" type="Control" node_paths=PackedStringArray("label_list", "player_sprite")]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_1kbtk")
+label_list = [NodePath("BackgroundStoryLabel"), NodePath("BackgroundStoryLabel2"), NodePath("BackgroundStoryLabel3"), NodePath("DoYouWantToPlayLabel"), NodePath("ButtonLabel")]
+player_sprite = NodePath("Sprite2D")
+
+[node name="BackgroundStoryLabel" type="RichTextLabel" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 160.0
+offset_top = 64.0
+offset_right = 1048.0
+offset_bottom = 536.0
+theme_override_font_sizes/normal_font_size = 50
+text = "The story that is about to unfold occurs in the year 20XX, years after a pandemic caused lockdowns in many countries. The term \"Work-From-Home\" (WFH) is now used to describe the working class who worked from home..."
+scroll_active = false
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(144, 232)
+scale = Vector2(10.96, 10.96)
+texture = ExtResource("2_drx86")
+region_enabled = true
+region_rect = Rect2(485, 0, 17, 21)
+
+[node name="BackgroundStoryLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 80.0
+offset_right = 1136.0
+offset_bottom = 312.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Ah... the day I've long feared has finally arrived. The boss just called to tell me that workers in my role must start commuting to work every day."
+
+[node name="BackgroundStoryLabel3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 312.0
+offset_right = 944.0
+offset_bottom = 376.0
+theme_override_font_sizes/normal_font_size = 40
+text = "The question is..."
+
+[node name="DoYouWantToPlayLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 152.0
+offset_top = 408.0
+offset_right = 1096.0
+offset_bottom = 480.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Do I quit my job or do I commute? "
+
+[node name="ButtonLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 280.0
+offset_top = 488.0
+offset_right = 904.0
+offset_bottom = 632.0
+
+[node name="GameStartButton" type="Button" parent="ButtonLabel"]
+layout_mode = 0
+offset_left = 360.0
+offset_top = 32.0
+offset_right = 445.0
+offset_bottom = 63.0
+scale = Vector2(2.15781, 2.11629)
+text = "Commute"
+
+[node name="GameOverButton" type="Button" parent="ButtonLabel"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 32.0
+offset_right = 170.0
+offset_bottom = 63.0
+scale = Vector2(2.255, 2.17448)
+text = "Quit my job"
+
+[connection signal="pressed" from="ButtonLabel/GameStartButton" to="." method="_on_game_start_button_pressed"]
+[connection signal="pressed" from="ButtonLabel/GameOverButton" to="." method="_on_game_over_button_pressed"]

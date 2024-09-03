@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://chmjn8p3s6kc0"]
+
+[ext_resource type="Script" path="res://Scripts/hud_gameover.gd" id="1_4rpng"]
+[ext_resource type="Script" path="res://Scripts/time_wasted.gd" id="2_neup4"]
+[ext_resource type="Script" path="res://Scripts/Label_money.gd" id="3_ao734"]
+
+[node name="HUD_gameover" type="Control" node_paths=PackedStringArray("label_list")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4rpng")
+label_list = [NodePath("Label_congrats"), NodePath("Label_days"), NodePath("Label_money"), NodePath("Label_time")]
+
+[node name="Label_congrats" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 192.0
+offset_right = 832.0
+offset_bottom = 280.0
+theme_override_font_sizes/normal_font_size = 50
+text = "Commute Over!"
+
+[node name="Label_days" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 368.0
+offset_right = 792.0
+offset_bottom = 408.0
+theme_override_font_sizes/normal_font_size = 22
+text = "Number of days in the office: 0"
+
+[node name="Label_money" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 408.0
+offset_right = 872.0
+offset_bottom = 456.0
+theme_override_font_sizes/normal_font_size = 22
+text = "Money in bank:"
+script = ExtResource("3_ao734")
+
+[node name="Label_time" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 328.0
+offset_top = 448.0
+offset_right = 792.0
+offset_bottom = 488.0
+theme_override_font_sizes/normal_font_size = 22
+text = "Time wasted:"
+script = ExtResource("2_neup4")
